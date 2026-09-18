@@ -24,6 +24,139 @@ header{position:sticky;top:0;z-index:50;background:rgba(8,11,12,.78);backdrop-fi
 @media(max-width:1060px){.nav-links a:not(.btn){display:none}}
 @media(max-width:960px){.grid-cats{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.feature-media{min-height:460px}.timeline{grid-template-columns:1fr 1fr}.time{border-bottom:1px solid var(--line)}.split{grid-template-columns:1fr}.reserve-wrap{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.nav{min-height:66px}.brand span{display:none}.nav-right{gap:8px}.nav-links .btn{display:none}.lang-switch a{min-width:34px;height:34px}.container{width:min(100% - 22px,var(--max))}.hero{min-height:640px;background-position:66% 36%;background-image:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.84) 52%,rgba(0,0,0,.38) 100%),url('assets/hero.png')}.hero-content{padding:92px 0 72px}.hero h1{font-size:clamp(3rem,16vw,5.2rem)}.grid-cats{grid-template-columns:1fr}.card{min-height:320px}.timeline{grid-template-columns:1fr}.time{border-right:0}.section{padding:70px 0}.split-card{min-height:440px}.footer-grid{grid-template-columns:1fr}.mobile-bar{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;z-index:60;left:10px;right:10px;bottom:10px;background:rgba(12,15,16,.92);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;overflow:hidden}.mobile-bar a{padding:14px 6px;text-align:center;font-weight:800;font-size:.85rem}.mobile-bar a:last-child{background:var(--sand);color:#111}}
+
+/* Revo FLOW · reservas */
+.booking-shell{
+  display:grid;
+  grid-template-columns:minmax(0,.72fr) minmax(440px,1.28fr);
+  gap:28px;
+  align-items:start;
+}
+.booking-copy{
+  position:sticky;
+  top:96px;
+  padding:38px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(239,182,119,.12),rgba(255,255,255,.025));
+}
+.booking-copy h2{
+  margin:.16em 0 .24em;
+}
+.booking-copy .booking-tagline{
+  margin:0 0 22px;
+  max-width:520px;
+  color:var(--text);
+  font-size:1.2rem;
+  font-weight:700;
+}
+.booking-copy .booking-help{
+  margin:0;
+  color:var(--muted);
+  font-size:.95rem;
+}
+.booking-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+.booking-frame-wrap{
+  overflow:hidden;
+  min-height:780px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:#fff;
+}
+.booking-frame{
+  display:block;
+  width:100%;
+  height:780px;
+  border:0;
+  background:#fff;
+}
+@media(max-width:960px){
+  .booking-shell{grid-template-columns:1fr}
+  .booking-copy{position:static}
+  .booking-frame-wrap,.booking-frame{min-height:730px;height:730px}
+}
+@media(max-width:700px){
+  .booking-copy{padding:26px}
+  .booking-frame-wrap,.booking-frame{min-height:690px;height:690px}
+}
+
+
+
+/* Responsive hardening · no cambia el diseño general */
+html,body{max-width:100%;overflow-x:hidden}
+.nav,.nav-right,.booking-shell,.booking-copy,.booking-frame-wrap{min-width:0}
+.lang-switch{flex-shrink:0}
+.booking-copy h2{
+  max-width:100%;
+  margin:.16em 0 .24em;
+  font-size:clamp(2.55rem,3.55vw,4rem);
+  line-height:.94;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+  overflow-wrap:break-word;
+}
+.booking-shell{
+  grid-template-columns:minmax(0,2fr) minmax(0,3fr);
+  gap:24px;
+}
+.booking-frame-wrap{
+  width:100%;
+  min-height:760px;
+}
+.booking-frame{
+  width:100%;
+  height:760px;
+  max-width:100%;
+}
+.booking-actions .btn{max-width:100%}
+
+@media(max-width:1080px){
+  .booking-shell{grid-template-columns:1fr}
+  .booking-copy{position:static}
+  .booking-copy h2{font-size:clamp(2.7rem,7vw,4.8rem)}
+  .booking-frame-wrap,.booking-frame{min-height:720px;height:720px}
+}
+
+@media(max-width:700px){
+  .booking-shell{gap:18px}
+  .booking-copy{padding:24px;border-radius:22px}
+  .booking-copy h2{
+    font-size:clamp(2.45rem,12vw,4rem);
+    line-height:.95;
+  }
+  .booking-copy .booking-tagline{font-size:1.05rem}
+  .booking-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .booking-actions .btn{width:100%;padding-inline:12px}
+  .booking-frame-wrap{
+    min-height:clamp(620px,78svh,720px);
+    height:clamp(620px,78svh,720px);
+    border-radius:20px;
+  }
+  .booking-frame{
+    min-height:clamp(620px,78svh,720px);
+    height:clamp(620px,78svh,720px);
+  }
+}
+
+@media(max-width:480px){
+  .container{width:calc(100% - 20px)}
+  .lang-switch{gap:2px;padding:3px}
+  .lang-switch a{min-width:30px;height:32px;font-size:.72rem}
+  .booking-copy{padding:20px}
+  .booking-copy h2{font-size:clamp(2.25rem,11vw,3.3rem)}
+  .booking-actions{grid-template-columns:1fr}
+  .booking-frame-wrap,
+  .booking-frame{
+    min-height:650px;
+    height:650px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -125,13 +258,37 @@ header{position:sticky;top:0;z-index:50;background:rgba(8,11,12,.78);backdrop-fi
 </section>
 
 <section class="section reserve" id="reservar">
-  <div class="container reserve-wrap">
-    <div>
-      <div class="eyebrow">Une table face à la mer ?</div>
-      <h2 style="margin-bottom:10px">Réservez votre table.</h2>
-      <p class="lead" style="margin:0">Réservez en ligne ou appelez-nous pour connaître les disponibilités.</p>
+  <div class="container">
+    <div class="booking-shell">
+
+      <div class="booking-copy">
+        <div class="eyebrow">RÉSERVATIONS</div>
+        <h2>Réservez votre table.</h2>
+        <p class="booking-tagline">Votre table face à la mer, à quelques clics.</p>
+        <p class="booking-help">Choisissez la date, l’heure et le nombre de personnes.</p>
+
+        <div class="booking-actions">
+          <a class="btn btn-primary"
+             href="https://revoflow.works/widget/booking?widget_token=kClGvw251lpX7VCsYJ2q6mVXeovTlB3RnVfPXY5rI4jqOLrAoAeHxEbMIDXl4eLERKo4LNRAtuBImPLV&amp;lang=fr"
+             target="_blank"
+             rel="noopener">Ouvrir la réservation ↗</a>
+
+          <a class="btn btn-secondary"
+             href="tel:+34627318391">Appeler</a>
+        </div>
+      </div>
+
+      <div class="booking-frame-wrap">
+        <iframe
+          class="booking-frame"
+          src="https://revoflow.works/widget/booking?widget_token=kClGvw251lpX7VCsYJ2q6mVXeovTlB3RnVfPXY5rI4jqOLrAoAeHxEbMIDXl4eLERKo4LNRAtuBImPLV&amp;lang=fr"
+          title="Réservations Best Seller Beach Bar"
+          loading="lazy"
+          allow="payment"
+        ></iframe>
+      </div>
+
     </div>
-    <a class="btn btn-primary" href="tel:+34627318391">Appelez maintenant · +34 627 31 83 91</a>
   </div>
 </section>
 </main>
