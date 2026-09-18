@@ -1,0 +1,5 @@
+# STAGING: pages include meta robots noindex until client validation.
+User-agent: *
+Allow: /
+
+Sitemap: https://fmchavarria.github.io/bestsellerbeachbar/sitemap.xml
