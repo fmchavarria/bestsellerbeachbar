@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://bestsellerbeach.restaurant/sitemap.xml
+Disallow: /
